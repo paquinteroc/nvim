@@ -1,14 +1,5 @@
 return {
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    build = ":Copilot auth",
-    opts = {
-      suggestion = { enabled = true, auto_trigger = true },
-      panel = { enabled = true },
-    },
-  },
-  {
     "zbirenbaum/copilot-cmp",
     dependencies = { "copilot.lua", "nvim-cmp" },
     opts = {},
