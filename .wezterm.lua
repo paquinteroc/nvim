@@ -19,15 +19,18 @@ return {
   enable_wayland = false, -- Set to true if you're using Wayland
 
   enable_csi_u_key_encoding = false,
-  -- Custom key bindings
+
   keys = {
     -- Set Ctrl+V to paste from clipboard
     { key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
-
     -- Since we're overriding Ctrl+V, let's set Ctrl+Shift+V to the default "visual" mode
     { key = "v", mods = "CTRL|SHIFT", action = act.ActivateCommandPalette },
-  },
+    -- Ctrl+Backspace to delete previous word
+    { key = "Backspace", mods = "CTRL", action = wezterm.action({ SendKey = { key = "w", mods = "CTRL" } }) },
 
+    -- Ctrl+Delete to delete next word
+    { key = "Delete", mods = "CTRL", action = wezterm.action({ SendKey = { key = "d", mods = "ALT" } }) },
+  },
   mouse_bindings = {
     -- Make sure right-click paste is enabled
     {
