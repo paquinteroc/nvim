@@ -3,7 +3,7 @@ require("config.lazy")
 require("plugins.python_dev")
 
 vim.opt.clipboard = "unnamedplus"
-vim.o.mouse = "a"
+vim.o.mouse = "r"
 
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.mousemoveevent = true
@@ -14,7 +14,10 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   end,
 })
 
-vim.keymap.set({ "n", "v" }, "<LeftRelease>", [["+y<LeftRelease>]], { silent = true })
+-- TO copy automatically to clipboard
+-- vim.keymap.set({ "n", "v" }, "<LeftRelease>", [["+y<LeftRelease>]], { silent = true })
+-- to copy with Control V
+vim.keymap.set("i", "<C-c>", '<Esc>"+yi', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-j>", function()
   local term_buf = vim.fn.bufnr("term://*")
