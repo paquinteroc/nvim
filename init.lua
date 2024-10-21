@@ -36,3 +36,7 @@ end, { noremap = true, silent = true })
 
 -- Ensure Ctrl-J works in terminal mode to toggle as well
 vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-j>", { noremap = true, silent = true })
+
+-- to have o as jump forward and i as jump backward
+vim.keymap.set("n", "<C-i>", "<C-o>", { noremap = true, desc = "Jump backward" })
+vim.keymap.set("n", "<C-o>", "<C-i>", { noremap = true, desc = "Jump forward" })
