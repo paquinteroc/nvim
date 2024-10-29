@@ -40,3 +40,11 @@ vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-j>", { noremap = true, silent = true
 -- to have o as jump forward and i as jump backward
 vim.keymap.set("n", "<C-i>", "<C-o>", { noremap = true, desc = "Jump backward" })
 vim.keymap.set("n", "<C-o>", "<C-i>", { noremap = true, desc = "Jump forward" })
+
+-- Add to your config/lua/config/keymaps.lua
+vim.keymap.set("n", "<C-z>", "u", { silent = true }) -- Normal mode undo
+vim.keymap.set("i", "<C-z>", "<C-o>u", { silent = true }) -- Insert mode undo
+
+-- You might also want Ctrl+Shift+Z for redo
+vim.keymap.set("n", "<C-S-z>", "<C-r>", { silent = true }) -- Normal mode redo
+vim.keymap.set("i", "<C-S-z>", "<C-o><C-r>", { silent = true }) -- Insert mode redo
