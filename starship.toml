@@ -1,0 +1,195 @@
+format = """
+
+$username\
+
+$hostname\
+
+$shlvl\
+
+$directory\
+
+$vcsh\
+
+$git_branch\
+
+$git_commit\
+
+$git_state\
+
+$git_metrics\
+
+$hg_branch\
+
+$docker_context\
+
+$package\
+
+$cmake\
+
+$dart\
+
+$deno\
+
+$dotnet\
+
+$elixir\
+
+$elm\
+
+$erlang\
+
+$golang\
+
+$helm\
+
+$java\
+
+$julia\
+
+$kotlin\
+
+$nim\
+
+$nodejs\
+
+$ocaml\
+
+$perl\
+
+$php\
+
+$purescript\
+
+$python\
+
+$red\
+
+$ruby\
+
+$rust\
+
+$scala\
+
+$swift\
+
+$terraform\
+
+$vlang\
+
+$vagrant\
+
+$zig\
+
+$nix_shell\
+
+$conda\
+
+$memory_usage\
+
+$gcloud\
+
+$kubernetes\
+
+$aws\
+
+$openstack\
+
+$env_var\
+
+$crystal\
+
+$custom\
+
+$cmd_duration\
+
+$line_break\
+
+$lua\
+
+$jobs\
+
+$battery\
+
+$time\
+
+$status\
+
+$shell\
+
+$character\
+
+"""
+
+ 
+
+# Disable the package module, hiding it from the prompt completely
+
+[cmd_duration]
+
+style = "fg:190"
+
+format = " took [$duration]($style) "
+
+ 
+
+[package]
+
+disabled = true
+
+ 
+
+[python]
+
+disabled = false
+
+style = "fg:190"
+
+ 
+
+[directory]
+
+truncation_length = 3
+
+truncate_to_repo = false
+
+style = "fg:208"
+
+ 
+
+[git_branch]
+
+symbol="🛠️ "
+
+style = "fg:229"
+
+format = '[$symbol $branch]($style) '
+
+ 
+
+[java]
+
+disabled = true
+
+ 
+
+[aws]
+
+style = "fg:202"
+
+format=' [$symbol($profile)(\[$duration\])]($style)'
+
+ 
+
+[terraform]
+
+disabled=false
+
+ 
+
+[kubernetes]
+
+disabled = false
+
+format='on [$symbol$context \($namespace\)]($style)'
+
+style='fg:69'
